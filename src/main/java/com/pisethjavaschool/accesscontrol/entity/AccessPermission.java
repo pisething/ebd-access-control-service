@@ -3,11 +3,10 @@ package com.pisethjavaschool.accesscontrol.entity;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import com.pisethjavaschool.accesscontrol.common.audit.AuditableEntity;
 import com.pisethjavaschool.accesscontrol.enums.AccessModule;
+import com.pisethjavaschool.platform.common.audit.AuditableEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -77,13 +77,3 @@ databaseChangeLog:
                   name: scope_type
               - column:
                   name: active
-  - changeSet:
-      id: 002-seed-access-role
-      author: ingpiseth
-      changes:
-        - loadData:
-            file: ../data/access-roles.csv
-            relativeToChangelogFile: true
-            tableName: access_role
-            separator: ","
-            quotchar: '"'
