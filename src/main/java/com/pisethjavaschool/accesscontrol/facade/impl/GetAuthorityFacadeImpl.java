@@ -4,12 +4,12 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
-import com.pisethjavaschool.accesscontrol.common.security.CurrentUserReader;
 import com.pisethjavaschool.accesscontrol.dto.AuthorityResponse;
 import com.pisethjavaschool.accesscontrol.dto.PermissionCheckRequest;
 import com.pisethjavaschool.accesscontrol.dto.PermissionCheckResponse;
 import com.pisethjavaschool.accesscontrol.facade.GetAuthorityFacade;
 import com.pisethjavaschool.accesscontrol.repository.AuthorityQueryRepository;
+import com.pisethjavaschool.platform.security.CurrentUserReader;
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;

@@ -6,7 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication(scanBasePackages = {
 		"com.pisethjavaschool.accesscontrol",
-		"com.pisethjavaschool.platform.exception"
+		"com.pisethjavaschool.platform.exception",
+		"com.pisethjavaschool.platform.security"
 })
 @ConfigurationPropertiesScan
 public class AccessControlServiceApplication {
