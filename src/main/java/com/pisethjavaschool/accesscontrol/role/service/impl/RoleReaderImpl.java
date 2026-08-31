@@ -28,4 +28,10 @@ public class RoleReaderImpl implements RoleReader {
     public Flux<AccessRole> getAll() {
         return repository.findAll();
     }
+    
+    @Override
+    public Mono<AccessRole> getByCode(String code) {
+        return repository.findByCode(code)
+                .switchIfEmpty(Mono.error(new AccessControlNotFoundException("Role not found: " + code)));
+    }
 }
