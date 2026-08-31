@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pisethjavaschool.accesscontrol.userrole.dto.AssignRoleByCodeRequest;
 import com.pisethjavaschool.accesscontrol.userrole.dto.AssignRoleRequest;
 import com.pisethjavaschool.accesscontrol.userrole.dto.UserRoleResponse;
 import com.pisethjavaschool.accesscontrol.userrole.facade.UserRoleFacade;
@@ -32,6 +33,14 @@ public class UserRoleController {
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<UserRoleResponse> assign(@PathVariable UUID userId, @Valid @RequestBody AssignRoleRequest request) {
         return facade.assignRole(userId, request);
+    }
+    
+    @PostMapping("/by-code")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Mono<UserRoleResponse> assignByCode(
+            @PathVariable UUID userId,
+            @Valid @RequestBody AssignRoleByCodeRequest request) {
+        return facade.assignRoleByCode(userId, request);
     }
 
     @GetMapping

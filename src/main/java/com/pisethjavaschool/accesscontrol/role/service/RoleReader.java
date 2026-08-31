@@ -10,4 +10,5 @@ import reactor.core.publisher.Mono;
 public interface RoleReader {
     Mono<AccessRole> getById(UUID id);
     Flux<AccessRole> getAll();
+    Mono<AccessRole> getByCode(String code);
 }
