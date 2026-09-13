@@ -18,3 +18,8 @@ server:
 logging:
   level:
     com.pisethjavaschool.accesscontrol: INFO
+platform:
+  clients:
+    user:
+      base-url: ${USER_SERVICE_URL:http://localhost:8089}
+      root-path: /api/v1/users		
