@@ -62,6 +62,12 @@
     		<artifactId>platform-security</artifactId>
     		<version>${platform-libraries.version}</version>
     	</dependency>
+        <dependency>
+            <groupId>com.pisethjavaschool.platform</groupId>
+            <artifactId>platform-user-client</artifactId>
+            <version>${platform-libraries.version}</version>
+        </dependency>
+
     	<dependency>
     		<groupId>com.pisethjavaschool.platform</groupId>
     		<artifactId>platform-r2dbc</artifactId>
@@ -72,12 +78,6 @@
     		<artifactId>platform-web</artifactId>
     		<version>${platform-libraries.version}</version>
     	</dependency>
-    	
-    	<dependency>
-            <groupId>com.pisethjavaschool.platform</groupId>
-            <artifactId>platform-user-client</artifactId>
-            <version>${platform-libraries.version}</version>
-        </dependency>
 
         <!-- Spring Boot -->
         <dependency>
@@ -97,14 +97,14 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
+        
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -155,11 +155,6 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
-        <dependency>
-        	<groupId>com.pisethjavaschool.platform</groupId>
-        	<artifactId>platform-security</artifactId>
-        	<version>1.0.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>
