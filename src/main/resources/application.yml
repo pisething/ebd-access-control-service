@@ -1,4 +1,9 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:9292/realms/restaurant-ktv-platform}
   application:
     name: access-control-service
   r2dbc:
@@ -22,4 +27,8 @@ platform:
   clients:
     user:
       base-url: ${USER_SERVICE_URL:http://localhost:8089}
-      root-path: /api/v1/users		
+      root-path: /api/v1/users	
+security:
+  provisioning:
+    client-id: ${PROVISIONING_CLIENT_ID:user-service-provisioning}
+    audience: ${PROVISIONING_AUDIENCE:access-control-service}	
