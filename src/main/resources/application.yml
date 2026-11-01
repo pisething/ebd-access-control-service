@@ -16,6 +16,25 @@ spring:
     user: ${DB_USERNAME:restaurant-ktv-platform}
     password: ${DB_PASSWORD:Pisethjavaschool#2026}
     change-log: classpath:db/changelog/db.changelog-master.yml
+  cloud:
+    consul:
+      host: localhost
+      port: 8600
+      discovery:
+        enabled: true
+        register: true
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true		
   
 server:
   port: ${SERVER_PORT:8097}
