@@ -16,3 +16,7 @@ databaseChangeLog:
       file: db/changelog/changes/seed/002-seed-access-role.yml
   - include:
       file: db/changelog/changes/seed/003-seed-role-permission.yml
+  - include:
+      file: db/changelog/changes/script/005-create-registration-role-inbox.yml
+  - include:
+      file: db/changelog/platform/outbox/001-create-outbox-event-table.yaml	  

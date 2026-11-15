@@ -6,6 +6,16 @@ spring:
           issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:9292/realms/restaurant-ktv-platform}
   application:
     name: access-control-service
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:7072}
+    consumer:
+      group-id: access-control-registration
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer		
   r2dbc:
     url: r2dbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5436}/${DB_NAME:platform_access_control}
     username: ${DB_USERNAME:restaurant-ktv-platform}
@@ -43,6 +53,10 @@ logging:
   level:
     com.pisethjavaschool.accesscontrol: INFO
 platform:
+  outbox:
+    relay:
+      enabled: true
+      poll-interval-ms: 1000		
   clients:
     user:
       base-url: ${USER_SERVICE_URL:http://localhost:8089}
